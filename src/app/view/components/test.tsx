@@ -1,18 +1,29 @@
-import getExampleList from '../../db/example.service.js'
+var exampleList = [];
+for (let i = 0; i < 10; i++) {
+  exampleList.unshift({
+    exampleId: i,
+    exampleTitle: "Example #" + i,
+    exampleShortDesc:
+      "description: Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.",
+  });
+  console.log(exampleList[i]);
+}
 
-function GetExamplePage(props) {
-  console.log(props)
-  const examplePageContent = getExampleList().map((element) => {
-    return (
-      <div className="w3-quarter" key={element.exampleId}>
-        <GetExampleComponent exampleObject={element}/>
-      </div>
+function GetExamplePage(prop) {
+  const examplePageContent = [];
+  exampleList.forEach((element) => {
+    examplePageContent.push(
+      <GetExampleComponent
+        exampleId={element.exampleId}
+        exampleTitle={element.exampleTitle}
+        exampleShortDesc={element.exampleShortDesc}
+      />
     );
-  }).reverse();
+  });
   const examplePage = [
     <div
       className="w3-main w3-content w3-padding row"
-      styles="max-width:1200px;margin-top:100px"
+    //   style={"max-width:1200px;margin-top:100px"}
     >
       {examplePageContent}
     </div>,
@@ -43,18 +54,16 @@ function GetExamplePage(props) {
   );
   return examplePage;
 }
-function GetExampleComponent(props) {
-  const exampleObject = props.exampleObject
-  console.log(props.exampleObject);
+function GetExampleComponent(prop) {
   return (
-    <div>
+    <div className="w3-quarter">
       <img
         src="app/assets/images/example1.png"
         alt="example"
-        styles="width:100%"
+        // style="width:100%"
       />
-      <h3>{exampleObject.exampleTitle}</h3>
-      <p>{exampleObject.exampleShortDesc}</p>
+      <h3>{prop.exampleTitle}</h3>
+      <p>{prop.exampleShortDesc}</p>
     </div>
   );
 }
