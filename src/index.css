@@ -1,5 +1,5 @@
 @import url("assets/scss/style_all.scss");
-
+@import url("assets/css/bootstrap.min.css");
 
 body {
   margin: 0;

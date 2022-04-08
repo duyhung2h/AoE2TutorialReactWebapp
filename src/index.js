@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './app/view/App';
 import GetExamplePage from './app/view/components/ExampleComponent';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
     <GetExamplePage/>
   </React.StrictMode>,
   document.getElementById('root')
