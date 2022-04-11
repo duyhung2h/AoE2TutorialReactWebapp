@@ -1,23 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import GetExamplePage from "./app/view/components/ExampleComponent";
+import App from "./app/view/pages/App/App.tsx";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <GetExamplePage />
-//   </React.StrictMode>,
-//   document.getElementById("root")
-// );
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 root.render(
-  <React.StrictMode>
-    <div key={"1"}>
-      <GetExamplePage key={"1"} />
-    </div>
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
