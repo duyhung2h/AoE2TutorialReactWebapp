@@ -1,5 +1,6 @@
 # AoE2TutorialReactWebapp
-First React project to be tested
+First React project to be tested.
+
 This is only the initial code, the main project code is privated.
 
 # How to run
